@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoCSampleApp", "OrnekApp1\IoCSampleApp.csproj", "{B00DFC3E-82D1-403F-A0B0-DEA0E34D1AE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoCSampleApp", "IoCSampleApp\IoCSampleApp.csproj", "{4D21372F-2FD1-4C9F-871F-DF0219C6C3D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B00DFC3E-82D1-403F-A0B0-DEA0E34D1AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B00DFC3E-82D1-403F-A0B0-DEA0E34D1AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B00DFC3E-82D1-403F-A0B0-DEA0E34D1AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B00DFC3E-82D1-403F-A0B0-DEA0E34D1AE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D21372F-2FD1-4C9F-871F-DF0219C6C3D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D21372F-2FD1-4C9F-871F-DF0219C6C3D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D21372F-2FD1-4C9F-871F-DF0219C6C3D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D21372F-2FD1-4C9F-871F-DF0219C6C3D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
