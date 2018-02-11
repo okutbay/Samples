@@ -2,5 +2,6 @@
 Some samples for programming best practices etc.
 
 
-#IoCSampleApp
+IoCSampleApp
+========================================================
 This sample explains IoC principles
