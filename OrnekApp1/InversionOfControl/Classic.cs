@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace OrnekApp1.InversionOfControl
+namespace IoCSampleApp.InversionOfControl
 {
     public class Classic
     {

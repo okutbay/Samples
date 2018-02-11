@@ -1,7 +1,7 @@
 ﻿using System;
-using static OrnekApp1.InversionOfControl.IoC;
+using static IoCSampleApp.InversionOfControl.IoC;
 
-namespace OrnekApp1
+namespace IoCSampleApp
 {
     class Program
     {
