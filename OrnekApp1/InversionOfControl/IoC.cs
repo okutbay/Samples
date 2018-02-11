@@ -25,35 +25,34 @@ namespace OrnekApp1.InversionOfControl
             //Injection via Service Locator
             MyClass someInstanceOfMyClass4 = new MyClass(1);
             someInstanceOfMyClass4.DoSomething();
-
         }
 
         public interface IMyDependencyClass
         {
-            void GetData();
+            string GetData();
         }
 
         public class MyDependencyClass : IMyDependencyClass
         {
-            public void GetData()
+            public string GetData()
             {
-                throw new Exception("Got data");
+                return "Got data";
             }
         }
 
         public class MyOtherDependencyClass : IMyDependencyClass
         {
-            public void GetData()
+            public string GetData()
             {
-                throw new Exception("Got another data");
+                return "Got another data";
             }
         }
 
         public class MySomeOtherDependencyClass : IMyDependencyClass
         {
-            public void GetData()
+            public string GetData()
             {
-                throw new Exception("Got some another data");
+                return "Got some another data";
             }
         }
 
@@ -87,8 +86,6 @@ namespace OrnekApp1.InversionOfControl
             }
             #endregion
 
-
-
             #region Injection via Method
             //Injection via Method
             public void InjectViaMethod(IMyDependencyClass dependency)
@@ -96,7 +93,6 @@ namespace OrnekApp1.InversionOfControl
                 this._dependency = dependency;
             }
             #endregion
-
 
             #region Injection via Service Locator
             //Injection via Service Locator
@@ -120,10 +116,10 @@ namespace OrnekApp1.InversionOfControl
             }
             #endregion
 
-            public void DoSomething()
+            public string DoSomething()
             {
                 //we are calling injected class' method 
-                this._dependency.GetData();
+                return this._dependency.GetData();
             }
         }
     }

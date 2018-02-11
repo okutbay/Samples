@@ -1,4 +1,5 @@
 ﻿using System;
+using static OrnekApp1.InversionOfControl.IoC;
 
 namespace OrnekApp1
 {
@@ -7,68 +8,32 @@ namespace OrnekApp1
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            string returnValue = string.Empty;
+
+            //Injection via Constructor
+            MyClass someInstanceOfMyClass1 = new MyClass(new MyDependencyClass());
+            returnValue = someInstanceOfMyClass1.DoSomething();
+            Console.WriteLine(returnValue);
+
+            //Injection via Property
+            MyClass someInstanceOfMyClass2 = new MyClass();
+            someInstanceOfMyClass2.MyDependency = new MyOtherDependencyClass();
+            returnValue = someInstanceOfMyClass2.DoSomething();
+            Console.WriteLine(returnValue);
+
+            //Injection via Method
+            MyClass someInstanceOfMyClass3 = new MyClass();
+            someInstanceOfMyClass3.InjectViaMethod(new MySomeOtherDependencyClass());
+            returnValue = someInstanceOfMyClass3.DoSomething();
+            Console.WriteLine(returnValue);
+
+            //Injection via Service Locator
+            MyClass someInstanceOfMyClass4 = new MyClass(5);
+            returnValue = someInstanceOfMyClass4.DoSomething();
+            Console.WriteLine(returnValue);
+
+            Console.ReadLine();
         }
     }
-
-
-
-    public class OrderService
-    {
-        private IOrderSaver orderSaver;
-
-        public OrderService(IOrderSaver orderSaver)
-        {
-            this.orderSaver = orderSaver;
-        }
-
-        public void AcceptOrder(Order order)
-        {
-            //Domain logic such as validation
-
-            orderSaver.SaveOrder(order);
-
-
-            //service locator
-            //OrderSaverFactory.GetOrderSaver().SaveOrder(order);
-        }
-    }
-
-
-    public class Order
-    {
-
-    }
-
-
-    public class OrderDatabase: IOrderSaver
-    {
-        public void SaveOrder(Order order)
-        {
-            throw new ApplicationException("I need a database to work");
-        }
-    }
-
-    public class IOrderSaver
-    {
-        public void SaveOrder(Order order) { }
-    }
-
-
-    //public class ServiceLocator
-    //{
-    //    public static IOrderSaver OrderSaver { get; set; }
-
-    //    public static IOrderSaver GetOrderSaver()
-    //    {
-    //        if (OrderSaver == null)
-    //            OrderSaver = new OrderDatabase();
-
-    //        return OrderSaver;
-    //    }
-    //}
-
-
-
-
-
 }
